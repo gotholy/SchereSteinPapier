@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="game">
+        <h1>stone scissors paper game</h1>
+        <div class="wrapper">
+          <article class="rounds">
+            <div class="container">
+              <h2 class="title">how many rounds?</h2>
+
+              <div class="rounds-selection">
+                <div class="radioGroup">
+                  <input
+                    type="radio"
+                    name="rounds"
+                    id="fiveRounds"
+                    class="roundInput"
+                    value="5"
+                  />
+                  <label for="fiveRounds">5</label>
+                </div>
+
+                <div class="radioGroup">
+                  <input
+                    type="radio"
+                    name="rounds"
+                    id="tenRounds"
+                    class="roundInput"
+                    value="10"
+                  />
+                  <label for="tenRounds">10</label>
+                </div>
+
+                <div class="radioGroup">
+                  <input
+                    type="radio"
+                    name="rounds"
+                    id="fifteenRounds"
+                    class="roundInput"
+                    value="15"
+                  />
+                  <label for="fifteenRounds">15</label>
+                </div>
+
+                <div class="radioGroup">
+                  <input
+                    type="radio"
+                    name="rounds"
+                    id="twentyRounds"
+                    class="roundInput"
+                    value="20"
+                  />
+                  <label for="twentyRounds">20</label>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="score">
+            <div class="container">
+              <div class="current-score">
+                <div class="user">0</div>
+                <div>:</div>
+                <div class="comp">0</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="selection">
+            <div class="container">
+              <div class="resultText">Let's play</div>
+
+              <button class="rock" id="rock" value="rock">✊</button>
+              <button class="paper" id="paper" value="paper">✋</button>
+              <button class="scissors" id="scissors" value="scissors">
+                ✌️
+              </button>
+              <div class="movesLeft">Moves Left:</div>
+              <div class="move">Make your move.</div>
+            </div>
+          </article>
+          <button class="restart" onclick="location.reload();">restart</button>
+        </div>
+      </section>
+    </main>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

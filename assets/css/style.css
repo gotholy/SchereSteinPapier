@@ -1,0 +1,81 @@
+html {
+  color: azure;
+  font-size: 62.5%;
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+.game {
+  background-color: rgb(48, 48, 48);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  font-size: 4.9rem;
+  width: 28vw;
+  padding: 1vw 1vh;
+}
+h2 {
+  font-size: 2rem;
+  margin-bottom: 2vh;
+  font-weight: 300;
+}
+button {
+  height: 5vh;
+  width: 5vh;
+  border-radius: 50px;
+  background-color: rgb(48, 48, 48);
+  color: azure;
+  font-size: 3rem;
+}
+.restart {
+  font-size: 1.4rem;
+}
+.wrapper {
+  background-color: rgb(55, 55, 55);
+  height: 60vh;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 7vh;
+}
+.container {
+  border: 1px solid azure;
+  height: 12vh;
+  width: 15vw;
+  text-align: center;
+}
+.rounds-selection {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0;
+  grid-row-gap: 2vh;
+  font-size: 1.5rem;
+}
+.current-score {
+  font-size: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 3vh;
+}
+#selection .container {
+  border: none;
+  margin-top: -5vh;
+}
+.resultText {
+  font-size: 3rem;
+  margin-bottom: 1vh;
+}
+.move {
+  font-size: 2.5rem;
+  margin-top: 2vh;
+}
