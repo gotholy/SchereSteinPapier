@@ -4,6 +4,7 @@ const resultText = document.querySelector(".resultText");
 const restartButton = document.querySelector(".restart");
 const move = document.querySelector(".move");
 const roundsSelection = document.querySelector(".roundsSelection");
+const gameColor = document.querySelector(".game");
 let userScore = 0;
 let computerScore = 0;
 let roundsRemaining = 3;
@@ -23,9 +24,8 @@ roundsInput.forEach((input) => {
 function startGame(rounds) {
   roundsRemaining = rounds;
   movesLeft.textContent = `Moves Left: ${roundsRemaining}`;
-  // und wenn sie aufhören soll
 }
-// Event-Listener für Spieloptionen (Stein, Schere, Papier) + Computer random auswahl
+// Event-Listener für Spieloptionen (Stein, Schere, Papier) + Computer random auswahl & round end function
 userOptions.forEach((option) => {
   option.addEventListener("click", () => {
     const userChoice = option.value;
@@ -35,13 +35,14 @@ userOptions.forEach((option) => {
     playRound(userChoice, computerChoice);
     console.log(userChoice);
     console.log(computerChoice);
+    // // funktion gameOver starten wenn Runde beendet ist.
     if (roundsRemaining === 0) {
       console.log("Game Over");
       gameOver();
       userOptions.forEach((option) => {
         option.style.display = "none";
       });
-      move.style.display = "none";
+      move.innerHTML = "GAME OVER !!!";
       roundsSelection.style.display = "none";
     }
   });
@@ -52,33 +53,40 @@ function playRound(userChoice, computerChoice) {
   movesLeft.textContent = `Moves Left: ${roundsRemaining}`;
   if (userChoice === computerChoice) {
     resultText.innerHTML = "Tie";
+    resultText.style.color = "azure";
   } else if (userChoice === "rock") {
     if (computerChoice === "paper") {
       resultText.innerHTML = "Computer Won";
+      resultText.style.color = "red";
       computerScore++;
       computerScoreBoard.innerHTML = computerScore;
     } else {
       resultText.innerHTML = "User Won";
+      resultText.style.color = "#308D46";
       userScore++;
       userScoreBoard.innerHTML = userScore;
     }
   } else if (userChoice == "scissors") {
     if (computerChoice == "rock") {
       resultText.innerHTML = "Computer Won";
+      resultText.style.color = "red";
       computerScore++;
       computerScoreBoard.textContent = computerScore;
     } else {
-      resultText.innerHTML = "Player Won";
+      resultText.innerHTML = "User Won";
+      resultText.style.color = "#308D46";
       userScore++;
       userScoreBoard.textContent = userScore;
     }
   } else if (userChoice === "paper") {
     if (computerChoice == "scissors") {
       resultText.innerHTML = "Computer Won";
+      resultText.style.color = "red";
       computerScore++;
       computerScoreBoard.textContent = computerScore;
     } else {
-      resultText.innerHTML = "Player Won";
+      resultText.innerHTML = "User Won";
+      resultText.style.color = "#308D46";
       userScore++;
       userScoreBoard.textContent = userScore;
     }
@@ -90,10 +98,12 @@ const gameOver = () => {
     resultText.style.fontSize = "2rem";
     resultText.innerText = "You Won The Game";
     resultText.style.color = "#308D46";
+    gameColor.style.backgroundColor = "#308D46";
   } else if (userScore < computerScore) {
     resultText.style.fontSize = "2rem";
     resultText.innerText = "You Lost The Game";
     resultText.style.color = "red";
+    gameColor.style.backgroundColor = "red";
   } else {
     resultText.style.fontSize = "2rem";
     resultText.innerText = "Tie";

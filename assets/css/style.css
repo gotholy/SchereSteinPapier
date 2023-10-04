@@ -1,6 +1,8 @@
 html {
   color: azure;
   font-size: 62.5%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 * {
   padding: 0;
@@ -12,18 +14,21 @@ html {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  text-align: center;
 }
 h1 {
   font-size: 4.9rem;
-  width: 28vw;
+  width: 70vw;
   padding: 1vw 1vh;
 }
 h2 {
   font-size: 2rem;
-  margin-bottom: 2vh;
+  margin-bottom: 1vh;
   font-weight: 300;
+}
+p {
+  margin-bottom: 1vh;
 }
 button {
   height: 5vh;
@@ -35,10 +40,13 @@ button {
 }
 .restart {
   font-size: 1.4rem;
+  margin-top: 6vh;
+  height: 5vh;
+  width: 8vw;
 }
 .wrapper {
   background-color: rgb(55, 55, 55);
-  height: 60vh;
+  height: 80vh;
   width: 30vw;
   display: flex;
   flex-direction: column;
@@ -48,8 +56,8 @@ button {
 }
 .container {
   border: 1px solid azure;
-  height: 12vh;
-  width: 15vw;
+  height: 15vh;
+  width: 25vw;
   text-align: center;
 }
 .roundsSelection {
@@ -67,15 +75,14 @@ button {
   justify-content: space-around;
   margin-top: 3vh;
 }
-#selection .container {
-  border: none;
-  margin-top: -5vh;
-}
 .resultText {
   font-size: 3rem;
-  margin-bottom: 1vh;
+  margin-bottom: 2vh;
 }
 .move {
   font-size: 2.5rem;
-  margin-top: 2vh;
+  margin-top: 4vh;
+}
+.movesLeft {
+  margin-top: 1vh;
 }
