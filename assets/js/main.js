@@ -12,6 +12,8 @@ const computerOptions = ["rock", "paper", "scissors"];
 const userScoreBoard = document.querySelector(".user");
 const computerScoreBoard = document.querySelector(".comp");
 const userOptions = document.querySelectorAll(".rock, .paper, .scissors");
+const title = document.querySelector(".title");
+
 // Event-Listener für Radio-Buttons
 roundsInput.forEach((input) => {
   input.addEventListener("change", () => {
@@ -99,15 +101,22 @@ const gameOver = () => {
     resultText.innerText = "You Won The Game";
     resultText.style.color = "#308D46";
     gameColor.style.backgroundColor = "#308D46";
+    title.innerHTML = "YOU WON, REMATCH? PRESS RESTART";
+    title.style.color = "rgb(48, 48, 48)";
   } else if (userScore < computerScore) {
     resultText.style.fontSize = "2rem";
     resultText.innerText = "You Lost The Game";
     resultText.style.color = "red";
     gameColor.style.backgroundColor = "red";
+    title.innerHTML = "YOU LOST, RETRY? PRESS RESTART";
+    title.style.color = "black";
   } else {
     resultText.style.fontSize = "2rem";
     resultText.innerText = "Tie";
     resultText.style.color = "grey";
+    gameColor.style.backgroundColor = "grey";
+    title.innerHTML = "WE ARE BOTH WINNER! TRY AGAIN? PRESS RESTART?";
+    title.style.color = "azure";
   }
 };
 // funktion für den restart button
