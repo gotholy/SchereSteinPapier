@@ -52,7 +52,7 @@ button {
   width: 15vw;
   text-align: center;
 }
-.rounds-selection {
+.roundsSelection {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
